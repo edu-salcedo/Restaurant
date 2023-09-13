@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link th:href="@{bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+ </head>
+  <body>
+    <header th:include="admin/template::header"></header>
+      <h2>this is the product page</h2>
+   <footer th:include="admin/template::footer"></footer> 
+   <script th:src="@{bootstrap/js/bootstrap.bundle.min.js}"></script>
+  </body>
+</html>
