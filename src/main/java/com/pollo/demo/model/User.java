@@ -23,21 +23,13 @@ public class User {
 	private String type;
 	private String password;
 	
-	@OneToMany(mappedBy = "user")
-	private List<Product> listProduct;
-	
-	@OneToMany(mappedBy = "user")
-	private List<Order>listOrder;
-	
-	
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	
 	public User(int id, String name, String username, String email, String adress, String phone, String type,
-			String password, List<Product> listProduct, List<Order> listOrder) {
+			String password) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -47,10 +39,7 @@ public class User {
 		this.phone = phone;
 		this.type = type;
 		this.password = password;
-		this.listProduct = listProduct;
-		this.listOrder = listOrder;
 	}
-
 
 	public int getId() {
 		return id;
@@ -115,23 +104,4 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public List<Product> getListProduct() {
-		return listProduct;
-	}
-
-	public void setListProduct(List<Product> listProduct) {
-		this.listProduct = listProduct;
-	}
-
-	public List<Order> getListOrder() {
-		return listOrder;
-	}
-
-	public void setListOrder(List<Order> listOrder) {
-		this.listOrder = listOrder;
-	}
-	
-	
-	
 }

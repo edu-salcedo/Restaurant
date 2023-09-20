@@ -20,15 +20,16 @@ public class Product {
 	private float price;
 	private boolean state;
 	
+	
 	@ManyToOne
-	private User user;
+	private Category category;
 	
 	public Product() {
 		super();
 
 	}
 
-	public Product(int id, String name, String imgUrl, String description, float price, boolean state, User user) {
+	public Product(int id, String name, String imgUrl, String description, float price, boolean state) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -36,7 +37,6 @@ public class Product {
 		this.description = description;
 		this.price = price;
 		this.state = state;
-		this.user=user;
 	}
 
 	public int getId() {
@@ -87,21 +87,9 @@ public class Product {
 		this.state = state;
 	}
 	
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
 	@Override
 	public String toString() {
 		return "product [id=" + id + ", name=" + name + ", imgUrl=" + imgUrl + ", description=" + description
 				+ ", price=" + price + ", state=" + state + "]";
-	}
-	
-	
-	
+	}	
 }

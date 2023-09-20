@@ -30,9 +30,6 @@ public class Order {
 		
 	}
 	
-	
-
-
 	public Order(int id, String name, Date date, boolean status, User user, List<OrderDetails> details) {
 		super();
 		this.id = id;
@@ -43,33 +40,52 @@ public class Order {
 		this.details = details;
 	}
 
-
-
-
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public Date getDate() {
 		return date;
 	}
+
 	public void setDate(Date date) {
 		this.date = date;
 	}
+
 	public boolean isStatus() {
 		return status;
 	}
+
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public List<OrderDetails> getDetails() {
+		return details;
+	}
+
+	public void setDetails(List<OrderDetails> details) {
+		this.details = details;
+	}
 	
 }
