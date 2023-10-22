@@ -15,28 +15,28 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	private String imgUrl;
 	private String description;
 	private float price;
+	private String imgUrl;
 	private boolean state;
-	
 	
 	@ManyToOne
 	private Category category;
-	
-	public Product() {
-		super();
 
-	}
-
-	public Product(int id, String name, String imgUrl, String description, float price, boolean state) {
+	public Product(int id, String name, String description, float price, String imgUrl, boolean state,
+			Category category) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.imgUrl = imgUrl;
 		this.description = description;
 		this.price = price;
+		this.imgUrl = imgUrl;
 		this.state = state;
+		this.category = category;
+	}
+	
+	public Product() {
+		super();
 	}
 
 	public int getId() {
@@ -55,14 +55,6 @@ public class Product {
 		this.name = name;
 	}
 
-	public String getImgUrl() {
-		return imgUrl;
-	}
-
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
-	}
-
 	public String getDescription() {
 		return description;
 	}
@@ -79,6 +71,14 @@ public class Product {
 		this.price = price;
 	}
 
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+
 	public boolean isState() {
 		return state;
 	}
@@ -86,10 +86,14 @@ public class Product {
 	public void setState(boolean state) {
 		this.state = state;
 	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	
-	@Override
-	public String toString() {
-		return "product [id=" + id + ", name=" + name + ", imgUrl=" + imgUrl + ", description=" + description
-				+ ", price=" + price + ", state=" + state + "]";
-	}	
+	
 }
