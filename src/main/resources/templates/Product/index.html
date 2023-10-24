@@ -10,12 +10,48 @@
     <header th:include="admin/template::header"></header>
     
     <div class="container text-center ">
-     <a class="btn btn-primary my-5 " th:href="@{/product/create}">crear</a>
-		
+     <a class="btn btn-primary my-5 " th:href="@{/product/create}">crear</a>	
 	</div>  
-
+	
+	<div class="w-75 m-auto">
+	 <table class="table table-hover">
+		 <tr>
+			 <th scope ="col">Nombre</th>
+			 <th scope ="col">Descripción</th>
+			 <th scope ="col">Img</th>
+			 <th scope ="col">Precio</th>
+			 <th scope ="col">estado</th>
+			 <th scope ="col"></th>
+		 </tr>
+		 <tbody>
+			 <tr th:each="product:${products}">
+				 <td th:text="${product.name}"></td>
+				 <td th:text="${product.description}"></td>
+				 <td th:text="${product.imgUrl}"></td>
+				 <td th:text="${product.price}"></td>
+				 <td th:text="${product.state}"></td>	
+<!--				    boton editar nos lleva al controlador del producto/editar-->
+				 <td><a class="btn btn-warning" th:href="@{product/edit/{id} (id=${product.id})}">editar</a></td>		
+				 <td><a class="btn btn-danger">eliminar</a></td>		 
+			 </tr>				  
+		 </tbody>
+	 </table> 	
+	</div>
+	
       
    <footer th:include="admin/template::footer"></footer> 
    <script th:src="@{bootstrap/js/bootstrap.bundle.min.js}"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Bootstrap demo</title>
+	<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+
+<body>
+	<header th:include="admin/template::header"></header>
+	<h2 class=" w-50 m-auto">this is the create product page</h2>
+
+	<div class="container w-50 border rounded mt-3">
+		<form class="row g-3 needs-validation mx-5" th:action="@{/product/save}" method="post" novalidate>
+			<div class="col-md-12">
+				<label for="validationCustom01" class="form-label">name</label>
+				<input type="text" class="form-control" id="validationCustom01" name="name" th:value="${product.name}" required>
+				<div class="valid-feedback">
+					Looks good!
+				</div>
+			</div>
+			<div class="col-md-12">
+				<label for="validationCustom02" class="form-label">description</label>
+				<textarea class="form-control" id="validationCustom02" name="description" value="Otto"
+					required></textarea>
+				<div class="valid-feedback">
+					Looks good!
+				</div>
+			</div>
+			<div class="col-md-12">
+				<label for="validationCustom03" class="form-label">ImgUrl</label>
+				<input type="text" class="form-control" id="validationCustom03" name="imgUrl" required>
+				<div class="invalid-feedback">
+					Please provide a valid city.
+				</div>
+			</div>
+			<!--		<div class="col-md-12">-->
+			<!--			<label for="validationCustom04" class="form-label">State</label>-->
+			<!--			<select name="state" class="form-select" id="validationCustom04" required>-->
+			<!--				<option selected disabled value="">Choose...</option>-->
+			<!--				<option>1</option>-->
+			<!--				<option>2</option>-->
+			<!--			</select>-->
+			<!--			<div class="invalid-feedback">-->
+			<!--				Please select a valid state.-->
+			<!--			</div>-->
+			<!--		</div>-->
+
+			<div class="col-md-12 mb-5">
+				<label for="validationCustom05" class="form-label">state</label>
+				<input type="number" class="form-control" id="validationCustom05" name="state" required>
+				<div class="invalid-feedback">
+					Please provide a valid zip.
+				</div>
+			</div>
+			<div class="col-md-12 mb-5">
+				<label for="validationCustom05" class="form-label">price</label>
+				<input type="number" class="form-control" id="validationCustom05" name="price" required>
+				<div class="invalid-feedback">
+					Please provide a valid zip.
+				</div>
+			</div>
+
+			<div class="col-6 m-auto">
+				<button class="btn btn-primary" type="submit">crear</button>
+			</div>
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+		</form>
+
+
+	</div>
+	<!--    formulario para cargar los productos-->
+
+	<footer th:include="admin/template::footer"></footer>
+	<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+
+</html>
