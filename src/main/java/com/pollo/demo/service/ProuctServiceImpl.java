@@ -27,14 +27,14 @@ public class ProuctServiceImpl implements ProductService {
 
 	@Override
 	public void update(Product product) {
-		productRepository.save(product);
+	 productRepository.save(product);
 
 	}
 
 	@Override
-	public void delete(Product product) {
+	public void delete(Integer id) {
 		// TODO Auto-generated method stub
-
+        productRepository.deleteById(id);
 	}
 
 	@Override

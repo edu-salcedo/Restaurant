@@ -2,7 +2,6 @@ package com.pollo.demo.controller;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,6 +40,7 @@ public class ProductController {
 	@PostMapping("/save")
 	public String save(Product product) {
 		productService.save(product);
+		LOGGER.info("PRODUCTO CREADO {}",product);
 		return "redirect:/product";
    	}
 	
@@ -49,18 +49,25 @@ public class ProductController {
 	   Product product= new Product();
 	   product=productService.getById(id);
 	   model.addAttribute("product",product);
-//		productService.delete(product);
-	   LOGGER.info("ESTE ES EL PRODUCTO {}",product);
+	   LOGGER.info(" TRAER EL PRODUCTO {}",product);
 		return "product/edit";
 	}
+	
+	@PostMapping("/update")
+	public String update(Product product) {
+		
+		LOGGER.info("PRODUCTO ANTES DE ACTUALIZAR {}",product);
+		productService.update(product);
+		LOGGER.info("PRODUCTO ACTUALIZADO {}",product);
+		return "redirect:/product";
+   	}
 
 	
+	@GetMapping("delete/{id}")
+	public String delete(@PathVariable  Integer id) {
 	
-	@DeleteMapping("delete/{product}")
-	public String delete(Product product) {
-	
-		productService.delete(product);
-		return "mesaje";
+		productService.delete(id);
+		return "redirect:/product";
 	}
 
 }

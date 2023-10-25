@@ -32,7 +32,7 @@
 				 <td th:text="${product.state}"></td>	
 <!--				    boton editar nos lleva al controlador del producto/editar-->
 				 <td><a class="btn btn-warning" th:href="@{product/edit/{id} (id=${product.id})}">editar</a></td>		
-				 <td><a class="btn btn-danger">eliminar</a></td>		 
+				 <td><a class="btn btn-danger" th:href="@{product/delete/{id} (id=${product.id})}">eliminar</a></td>		 
 			 </tr>				  
 		 </tbody>
 	 </table> 	
