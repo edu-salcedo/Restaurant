@@ -14,8 +14,8 @@
 	<h2 class=" w-50 m-auto">this is the create product page</h2>
 
 	<div class="container w-50 border rounded mt-3">
-		<form class="row g-3 needs-validation mx-5" th:action="@{/product/update}" method="post" novalidate>
-<!--			<input type="hidden" name="id" th:value="${product.id}">-->
+		<form class="row g-3 needs-validation mx-5" th:action="@{/product/update}" method="post" enctype="multipart/form-data" novalidate>
+			<input type="hidden" name="id" th:value="${product.id}">
 			<div class="col-md-12">
 				<label for="validationCustom01" class="form-label">name</label>
 				<input type="text" class="form-control" id="validationCustom01" name="name" th:value="${product.name}" required>
@@ -31,8 +31,8 @@
 				</div>
 			</div>
 			<div class="col-md-12">
-				<label for="validationCustom03" class="form-label">ImgUrl</label>
-				<input type="text" class="form-control" id="validationCustom03" name="imgUrl" th:value="${product.imgUrl}" required>
+				<label for="validationCustom03" class="form-label">Img</label>
+				<input type="file" class="form-control" id="validationCustom03" name="img" th:value="${product.img}" required>
 				<div class="invalid-feedback">
 					Please provide a valid city.
 				</div>
@@ -65,7 +65,7 @@
 			</div>
 
 			<div class="col-6 m-auto">
-				<button class="btn btn-primary" type="submit">crear</button>
+				<button class="btn btn-primary" type="submit">Editar</button>
 			</div>
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		</form>

@@ -15,7 +15,7 @@ public class Category {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	private String name;
 	
 	@OneToMany(mappedBy = "category")
@@ -26,7 +26,7 @@ public class Category {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Category(int id, String name, List<Product> listProduct) {
+	public Category(Integer id, String name, List<Product> listProduct) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -37,7 +37,7 @@ public class Category {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
