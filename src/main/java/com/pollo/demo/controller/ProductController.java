@@ -47,6 +47,7 @@ public class ProductController {
 		if(product.getId()==null) {
 			
 			String ImgName = upload.SaveImg(file);
+			product.setImgUrl(ImgName);
 		}
 		productService.save(product);
 		return "redirect:/product";
