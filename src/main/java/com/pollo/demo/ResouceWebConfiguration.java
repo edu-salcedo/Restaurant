@@ -1,7 +1,5 @@
 package com.pollo.demo;
 
-import java.rmi.registry.Registry;
-
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 

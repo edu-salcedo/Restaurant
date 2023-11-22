@@ -22,7 +22,7 @@ public class UploadFileImgService {
 	        
 	        return file.getOriginalFilename();
 		}
-		return "default.jpg";
+		return "default.png";
 	}
 	
 	public void deleteImg(String name) {
