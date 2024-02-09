@@ -1,0 +1,20 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.navul{
+    display: flex;
+    justify-content: space-around;
+    background-color:aqua;
+}
+
+.navul li{
+    background-color: blueviolet;
+    color: antiquewhite;
+}
+
+li{
+    color: azure;
+    background-color: antiquewhite;
+}

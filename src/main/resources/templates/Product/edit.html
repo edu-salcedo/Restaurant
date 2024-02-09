@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<header th:include="admin/template::header"></header>
+	 <header th:replace="~{admin/template::header}"></header>
 	<h2 class=" w-50 m-auto">this is the create product page</h2>
 
 	<div class="container w-50 border rounded mt-3">
@@ -74,7 +74,7 @@
 	</div>
 	<!--    formulario para cargar los productos-->
 
-	<footer th:include="admin/template::footer"></footer>
+	 <footer th:replace="~{admin/template::footer}"></footer> 
 	<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 

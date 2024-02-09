@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resto demo</title>
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+ </head>
+  <body>
+    <header th:replace="~{admin/template::header}"></header>
+    
+	<div class="w-75 m-auto">
+	 <table class="table table-hover">
+		 <tr>
+			 <th scope ="col">id</th>
+			 <th scope ="col">Nombre</th>
+			
+			 <th scope ="col"></th>
+		 </tr>
+		 <tbody>
+			 <tr th:each="category:${categories}">
+				 <td th:text="${category.id}"></td>
+				 <td th:text="${category.name}"></td>
+				 
+<!--				    boton editar nos lleva al controlador del producto/editar
+				 <td><a class="btn btn-warning" th:href="@{product/edit/{id} (id=${product.id})}">editar</a></td>		
+				 <td><a class="btn btn-danger" th:href="@{product/delete/{id} (id=${product.id})}">eliminar</a></td>	-->	 
+			 </tr>				  
+		 </tbody>
+	 </table> 	
+	</div>
+	
+      
+   <footer th:replace="~{admin/template::footer}"></footer> 
+   <script th:src="@{bootstrap/js/bootstrap.bundle.min.js}"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

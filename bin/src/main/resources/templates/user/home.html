@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Resto demo</title>
+	<link th:href="@{bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+
+<body>
+	<header th:include="admin/template::header"></header>
+	<!--   seccion carousel-->
+	<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="https://s7g10.scene7.com/is/image/barcelo/cable%20beach?fmt=webp-alpha&qlt=75&wid=800&fit=crop,1" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://s7g10.scene7.com/is/image/barcelo/baia%20de%20sancho?fmt=webp-alpha&qlt=75&wid=800&fit=crop,1" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://s7g10.scene7.com/is/image/barcelo/baia%20de%20sancho?fmt=webp-alpha&qlt=75&wid=800&fit=crop,1" class="d-block w-100" alt="...">
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+
+	<footer th:include="admin/template::footer"></footer>
+	<script th:src="@{bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+
+</html>
